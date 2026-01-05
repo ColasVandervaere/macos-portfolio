@@ -1,0 +1,82 @@
+.window {
+  position: absolute;
+  border-radius: 16px;
+  background: rgba(20, 22, 35, 0.55);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.window--focused {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.55);
+}
+
+.window__titlebar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.window__traffic {
+  display: flex;
+  gap: 8px;
+  width: 72px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot--red {
+  background: #ff5f57;
+}
+
+.dot--yellow {
+  background: #febc2e;
+}
+
+.dot--green {
+  background: #28c840;
+}
+
+.dot--grey {
+  background: #4A4A4A;
+  cursor: default;
+}
+
+.window__title {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.window__spacer {
+  width: 72px;
+}
+
+.window__content {
+  height: calc(100% - 44px);
+  overflow: auto;
+  padding: 16px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.window__titlebar {
+  cursor: grab;
+}
+
+.window__titlebar:active {
+  cursor: grabbing;
+}

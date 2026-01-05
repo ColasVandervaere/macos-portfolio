@@ -1,5 +1,5 @@
-// src/components/Dock.tsx
 import type { ReactNode } from "react";
+import "./dock.css";
 
 export type DockKey = string;
 
@@ -30,7 +30,8 @@ export function Dock<K extends DockKey>({
           const focused = isFocused?.(it.key) ?? false;
 
           return (
-            <button
+            //<div className="dockItemWrapper">
+              <button
               key={String(it.key)}
               className={`dockItem ${focused ? "dockItem--focused" : ""}`}
               onClick={() => onActivate(it.key)}
@@ -41,6 +42,7 @@ export function Dock<K extends DockKey>({
               <div className="dockIcon">{it.icon}</div>
               <div className={`dockDot ${open ? "dockDot--on" : ""}`} />
             </button>
+            //</div>
           );
         })}
       </div>

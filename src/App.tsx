@@ -1,11 +1,14 @@
-import { useRef, useState } from "react";
-import { Dock } from "./components/dock";
-//import { Window } from "./components/Window";
+import { useRef, useState, useEffect } from "react";
+import "./app.css";
+import { Dock } from "./components/dock/Dock";
+import { Window } from "./components/window/Window";
+import { About } from "./components/windows/About";
+import { Projects } from "./components/windows/Projects";
+import { Resume } from "./components/windows/Resume";
+import { Contact } from "./components/windows/Contact";
 
-// Window identifiers
 type WindowKey = "about" | "projects" | "resume" | "contact";
 
-// Window state shape
 type WindowState = {
   key: WindowKey;
   isOpen: boolean;
@@ -18,6 +21,8 @@ type WindowState = {
 
 export default function App() {
   const zCounter = useRef(10);
+  const draggingKey = useRef<WindowKey | null>(null);
+  const dragOffset = useRef({ x: 0, y: 0 });
 
   const [windows, setWindows] = useState<Record<WindowKey, WindowState>>({
     about: {
@@ -58,6 +63,15 @@ export default function App() {
     },
   });
 
+  useEffect(() => {
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("mouseup", onMouseUp);
+
+  return () => {
+    window.removeEventListener("mousemove", onMouseMove);
+    window.removeEventListener("mouseup", onMouseUp);
+  };
+}, []);
 
   const openWindow = (key: WindowKey) => {
     zCounter.current += 1;
@@ -94,14 +108,117 @@ export default function App() {
     }));
   };
 
-  const focusedKey =
+  const startDrag = (key: WindowKey, e: React.MouseEvent) => {
+  focusWindow(key);
+
+  draggingKey.current = key;
+
+  dragOffset.current = {
+    x: e.clientX - windows[key].x,
+    y: e.clientY - windows[key].y,
+  };
+};
+
+const onMouseMove = (e: MouseEvent) => {
+  const key = draggingKey.current;
+  if (!key) return;
+
+  setWindows((prev) => ({
+    ...prev,
+    [key]: {
+      ...prev[key],
+      x: e.clientX - dragOffset.current.x,
+      y: e.clientY - dragOffset.current.y,
+    },
+  }));
+};
+
+const onMouseUp = () => {
+  draggingKey.current = null;
+};
+
+  const focusedZ =
     Object.values(windows)
       .filter((w) => w.isOpen)
-      .sort((a, b) => b.z - a.z)[0]?.key ?? null;
+      .sort((a, b) => b.z - a.z)[0]?.z ?? null;
 
   return (
     <div className="desktop">
-      {/* Windows will go here next */}
+     {windows.about.isOpen && (
+  <Window
+    title="About"
+    isFocused={windows.about.z === focusedZ}
+    style={{
+      left: windows.about.x,
+      top: windows.about.y,
+      width: windows.about.width,
+      height: windows.about.height,
+      zIndex: windows.about.z,
+    }}
+    onFocus={() => focusWindow("about")}
+    onClose={() => closeWindow("about")}
+    onDragStart={(e) => startDrag("about", e)}
+  >
+    <About />
+  </Window>
+)}
+
+{windows.projects.isOpen && (
+  <Window
+    title="Projects"
+    isFocused={windows.projects.z === focusedZ}
+    style={{
+      left: windows.projects.x,
+      top: windows.projects.y,
+      width: windows.projects.width,
+      height: windows.projects.height,
+      zIndex: windows.projects.z,
+    }}
+    onFocus={() => focusWindow("projects")}
+    onClose={() => closeWindow("projects")}
+    onDragStart={(e) => startDrag("projects", e)}
+  >
+    <Projects />
+  </Window>
+)}
+
+{windows.resume.isOpen && (
+  <Window
+    title="Resume"
+    isFocused={windows.resume.z === focusedZ}
+    style={{
+      left: windows.resume.x,
+      top: windows.resume.y,
+      width: windows.resume.width,
+      height: windows.resume.height,
+      zIndex: windows.resume.z,
+    }}
+    onFocus={() => focusWindow("resume")}
+    onClose={() => closeWindow("resume")}
+    onDragStart={(e) => startDrag("resume", e)}
+  >
+    <Resume />
+  </Window>
+)}
+
+{windows.contact.isOpen && (
+  <Window
+    title="Contact"
+    isFocused={windows.contact.z === focusedZ}
+    style={{
+      left: windows.contact.x,
+      top: windows.contact.y,
+      width: windows.contact.width,
+      height: windows.contact.height,
+      zIndex: windows.contact.z,
+    }}
+    onFocus={() => focusWindow("contact")}
+    onClose={() => closeWindow("contact")}
+    onDragStart={(e) => startDrag("contact", e)}
+  >
+    <Contact />
+  </Window>
+)}
 
       <Dock
         items={[
@@ -111,7 +228,7 @@ export default function App() {
           { key: "contact", label: "Contact", icon: "✉️" },
         ]}
         isOpen={(k) => windows[k].isOpen}
-        isFocused={(k) => focusedKey === k}
+        isFocused={(k) => focusedZ === windows[k].z}
         onActivate={openWindow}
       />
     </div>
