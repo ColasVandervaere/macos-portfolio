@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import "./dock.css";
 
 export type DockKey = string;
@@ -6,7 +5,8 @@ export type DockKey = string;
 export type DockItem<K extends DockKey = DockKey> = {
   key: K;
   label: string;
-  icon: ReactNode;
+  icon: string;
+  url?: string;
 };
 
 type Props<K extends DockKey = DockKey> = {
@@ -30,19 +30,20 @@ export function Dock<K extends DockKey>({
           const focused = isFocused?.(it.key) ?? false;
 
           return (
-            //<div className="dockItemWrapper">
-              <button
+            <button
               key={String(it.key)}
               className={`dockItem ${focused ? "dockItem--focused" : ""}`}
+              style={{ "--bg": `url(${it.icon})` } as React.CSSProperties}
               onClick={() => onActivate(it.key)}
               title={it.label}
               aria-label={it.label}
               type="button"
             >
-              <div className="dockIcon">{it.icon}</div>
+              <div className="dockIcon">
+                {it.icon.length > 3 ? "" : it.icon}
+              </div>
               <div className={`dockDot ${open ? "dockDot--on" : ""}`} />
             </button>
-            //</div>
           );
         })}
       </div>

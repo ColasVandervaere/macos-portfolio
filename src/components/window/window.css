@@ -3,7 +3,7 @@
   border-radius: 16px;
   background: rgba(20, 22, 35, 0.55);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
@@ -51,7 +51,7 @@
 }
 
 .dot--grey {
-  background: #4A4A4A;
+  background: #4a4a4a;
   cursor: default;
 }
 
@@ -79,4 +79,74 @@
 
 .window__titlebar:active {
   cursor: grabbing;
+}
+
+.window__resize-handle {
+  position: absolute;
+  z-index: 100;
+  touch-action: none;
+}
+
+.window__resize-handle--n {
+  top: 0;
+  left: 10px;
+  right: 10px;
+  height: 6px;
+  cursor: ns-resize;
+}
+
+.window__resize-handle--s {
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 6px;
+  cursor: ns-resize;
+}
+
+.window__resize-handle--e {
+  top: 10px;
+  bottom: 10px;
+  right: 0;
+  width: 6px;
+  cursor: ew-resize;
+}
+
+.window__resize-handle--w {
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 6px;
+  cursor: ew-resize;
+}
+
+.window__resize-handle--ne {
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: nesw-resize;
+}
+
+.window__resize-handle--nw {
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  cursor: nwse-resize;
+}
+
+.window__resize-handle--se {
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: nwse-resize;
+}
+
+.window__resize-handle--sw {
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  cursor: nesw-resize;
 }

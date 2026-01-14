@@ -8,6 +8,7 @@
   pointer-events: none;
   z-index: 10000;
   cursor: pointer;
+  width: auto;
 }
 
 .dock {
@@ -18,11 +19,11 @@
   border-radius: 22px;
   background-color: rgba(20, 22, 35, 0.55);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, .12);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, .45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
 }
 
-.dockItemWrapper{
+.dockItemWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -34,24 +35,28 @@
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, .10);
-  background-color: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 1);
+  background: var(--bg, none) center / cover no-repeat;
   cursor: pointer;
   display: grid;
   place-items: center;
   position: relative;
-  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
 }
 
 .dockItem:hover {
   transform: translateY(-4px) scale(1.06);
-  background-color: rgba(255, 255, 255, .10);
-  border-color: rgba(255, 255, 255, .16);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 .dockItem--focused {
-  border-color: rgba(255, 255, 255, .22);
-  background-color: rgba(255, 255, 255, .12);
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .dockIcon {
@@ -70,5 +75,5 @@
 }
 
 .dockDot--on {
-  background-color: rgba(255, 255, 255, .75);
+  background-color: rgba(255, 255, 255, 0.75);
 }
