@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./app.css";
+import "./App.css";
 import linkedinIcon from "./assets/linkedin_logo.png";
 import { Dock } from "./components/dock/Dock";
 import { type ResizeDirection, Window } from "./components/window/Window";
