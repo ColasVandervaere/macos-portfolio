@@ -1,0 +1,110 @@
+.position-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+.position-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.position-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0;
+}
+
+.position-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.position-req {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.position-req-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.position-req-list {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.position-req-list strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.position-response {
+  background: rgba(40, 200, 64, 0.05); /* Greenish tint for 'Match' */
+  border: 1px solid rgba(40, 200, 64, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.position-response::before {
+  content: "MATCH";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #28c840;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+}
+
+.position-response-text {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.position-response-text + .position-response-text {
+  margin-top: 12px;
+}
+
+.position-closing {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .position-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+}

@@ -1,30 +1,52 @@
+import "./About.css";
+
 export function About() {
   return (
-    <>
-      <h1 style={{ marginTop: 0 }}>Hey 👋</h1>
-      <p style={{ opacity: 0.85 }}>
-        I’m Colas — growth marketer with +3.5 years of experience. This React
-        portfolio works like a mini macOS desktop app. I built this as an
-        application for the{" "}
-        <a
-          href="https://jobs.ashbyhq.com/zefir/6fbf6297-ab96-4c46-8e1a-a15258a8fa58"
-          target="_blank"
-        >
-          Growth Ops position
-        </a>
-        . Feel free to explore its parts (and to looks for the little easter
-        eggs hidden in it ;) ). <br />
-        <br />
-        As a little Guide, here how's it's structured: <br />- Hey (this page)
-        <br />- Why me? (e.g. why am I a good fit for this position, point per
-        point) <br />- LinkedIn (my LinkedIn profile, which basically stands as
-        my resume. You'll find all the informations about my previous experience
-        and degrees.) <br />- Who am I? (What do I do outside of work?) <br />-
-        Contact (my contact)
-        <br />
-        <br />
-        Happy exploration!
-      </p>
-    </>
+    <div className="about-container">
+      <div className="about-header">
+        <h1>Hey!</h1>
+        <p className="about-intro">
+          I’m Colas — Growth Marketer & Full Stack Developer. This React app
+          works like a mini macOS desktop app. I built this as an application
+          for the{" "}
+          <a
+            className="about-link"
+            href="https://jobs.ashbyhq.com/zefir/6fbf6297-ab96-4c46-8e1a-a15258a8fa58"
+            target="_blank"
+          >
+            Growth Ops position
+          </a>
+          .
+        </p>
+      </div>
+
+      <div className="about-guide">
+        <span className="about-guide-title">
+          As a little Guide, here's how it's structured:
+        </span>
+        <ul className="about-list">
+          <li className="about-list-item">
+            <strong>- Hey</strong> (you're here)
+          </li>
+          <li className="about-list-item">
+            <strong>- Why me?</strong> (how my experience matches the role,
+            point by point)
+          </li>
+          <li className="about-list-item">
+            <strong>- LinkedIn</strong> (just a link to my LinkedIn profile,
+            which stands as my resume. You'll find all the informations about my
+            experiences and degrees.)
+          </li>
+          <li className="about-list-item">
+            <strong>- Who am I?</strong> (What do I do outside of work?)
+          </li>
+          <li className="about-list-item">
+            <strong>- Contact</strong>
+          </li>
+        </ul>
+      </div>
+
+      <div className="about-footer">Happy exploration!</div>
+    </div>
   );
 }

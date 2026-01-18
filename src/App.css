@@ -23,18 +23,7 @@ body,
     Roboto,
     sans-serif;
 
-  background:
-    radial-gradient(
-      1200px 600px at 20% 10%,
-      rgba(109, 40, 217, 0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 80% 30%,
-      rgba(59, 130, 246, 0.28),
-      transparent 60%
-    ),
-    linear-gradient(160deg, #0b1020, #111a35);
+  background: url("./assets/colas-x-zefir.avif") no-repeat center / cover fixed;
 }
 
 a {

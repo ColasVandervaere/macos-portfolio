@@ -5,10 +5,10 @@ import { Dock } from "./components/dock/Dock";
 import { type ResizeDirection, Window } from "./components/window/Window";
 import { About } from "./components/windows/About";
 import { Contact } from "./components/windows/Contact";
-import { Projects } from "./components/windows/Projects";
-import { Resume } from "./components/windows/Resume";
+import { Me } from "./components/windows/Me";
+import { PositionFit } from "./components/windows/Position";
 
-type WindowKey = "about" | "projects" | "resume" | "contact" | "linkedin";
+type WindowKey = "about" | "positionFit" | "me" | "contact" | "linkedin";
 
 type WindowState = {
   key: WindowKey;
@@ -31,30 +31,30 @@ export default function App() {
   const [windows, setWindows] = useState<Record<WindowKey, WindowState>>({
     about: {
       key: "about",
-      isOpen: false,
+      isOpen: true,
       z: 0,
-      x: 80,
-      y: 100,
-      width: 520,
-      height: 420,
+      x: 280,
+      y: 150,
+      width: 920,
+      height: 630,
     },
-    projects: {
-      key: "projects",
+    positionFit: {
+      key: "positionFit",
       isOpen: false,
       z: 0,
       x: 140,
       y: 120,
-      width: 720,
-      height: 520,
+      width: 1124,
+      height: 720,
     },
-    resume: {
-      key: "resume",
+    me: {
+      key: "me",
       isOpen: false,
       z: 0,
-      x: 160,
+      x: 360,
       y: 140,
-      width: 700,
-      height: 520,
+      width: 1040,
+      height: 720,
     },
     contact: {
       key: "contact",
@@ -235,43 +235,43 @@ export default function App() {
         </Window>
       )}
 
-      {windows.projects.isOpen && (
+      {windows.positionFit.isOpen && (
         <Window
-          title="Projects"
-          isFocused={windows.projects.z === focusedZ}
+          title="Position Fit"
+          isFocused={windows.positionFit.z === focusedZ}
           style={{
-            left: windows.projects.x,
-            top: windows.projects.y,
-            width: windows.projects.width,
-            height: windows.projects.height,
-            zIndex: windows.projects.z,
+            left: windows.positionFit.x,
+            top: windows.positionFit.y,
+            width: windows.positionFit.width,
+            height: windows.positionFit.height,
+            zIndex: windows.positionFit.z,
           }}
-          onFocus={() => focusWindow("projects")}
-          onClose={() => closeWindow("projects")}
-          onDragStart={(e) => startDrag("projects", e)}
-          onResizeStart={(dir, e) => startResize("projects", dir, e)}
+          onFocus={() => focusWindow("positionFit")}
+          onClose={() => closeWindow("positionFit")}
+          onDragStart={(e) => startDrag("positionFit", e)}
+          onResizeStart={(dir, e) => startResize("positionFit", dir, e)}
         >
-          <Projects />
+          <PositionFit />
         </Window>
       )}
 
-      {windows.resume.isOpen && (
+      {windows.me.isOpen && (
         <Window
           title="Resume"
-          isFocused={windows.resume.z === focusedZ}
+          isFocused={windows.me.z === focusedZ}
           style={{
-            left: windows.resume.x,
-            top: windows.resume.y,
-            width: windows.resume.width,
-            height: windows.resume.height,
-            zIndex: windows.resume.z,
+            left: windows.me.x,
+            top: windows.me.y,
+            width: windows.me.width,
+            height: windows.me.height,
+            zIndex: windows.me.z,
           }}
-          onFocus={() => focusWindow("resume")}
-          onClose={() => closeWindow("resume")}
-          onDragStart={(e) => startDrag("resume", e)}
-          onResizeStart={(dir, e) => startResize("resume", dir, e)}
+          onFocus={() => focusWindow("me")}
+          onClose={() => closeWindow("me")}
+          onDragStart={(e) => startDrag("me", e)}
+          onResizeStart={(dir, e) => startResize("me", dir, e)}
         >
-          <Resume />
+          <Me />
         </Window>
       )}
 
@@ -298,14 +298,14 @@ export default function App() {
       <Dock
         items={[
           { key: "about", label: "About", icon: "👋" },
-          { key: "projects", label: "Projects", icon: "🗂️" },
-          { key: "resume", label: "Resume", icon: "📄" },
-          { key: "contact", label: "Contact", icon: "✉️" },
+          { key: "positionFit", label: "Position Fit", icon: "🪢" },
+          { key: "me", label: "Me", icon: "👨" },
+          { key: "contact", label: "Contact", icon: "📞" },
           {
             key: "linkedin",
             label: "LinkedIn",
             icon: linkedinIcon,
-            url: "https://linkedin.com/in/colasvandervaere",
+            url: "https://linkedin.com/in/colas-vandervaere",
           },
         ]}
         isOpen={(k) => windows[k].isOpen}

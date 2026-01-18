@@ -71,6 +71,46 @@
   overflow: auto;
   padding: 16px;
   color: rgba(255, 255, 255, 0.86);
+  /* Smooth entry */
+  animation: fadeIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* macOS-like Scrollbar */
+.window__content::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.window__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.window__content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  border: 2px solid rgba(20, 22, 35, 0); /* Creates padding effect */
+  background-clip: content-box;
+}
+
+.window__content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(20, 22, 35, 0);
+  background-clip: content-box;
+}
+
+.window__content::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .window__titlebar {

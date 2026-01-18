@@ -34,7 +34,13 @@ export function Dock<K extends DockKey>({
               key={String(it.key)}
               className={`dockItem ${focused ? "dockItem--focused" : ""}`}
               style={{ "--bg": `url(${it.icon})` } as React.CSSProperties}
-              onClick={() => onActivate(it.key)}
+              onClick={() => {
+                if (it.url) {
+                  window.open(it.url, "_blank");
+                } else {
+                  onActivate(it.key);
+                }
+              }}
               title={it.label}
               aria-label={it.label}
               type="button"
