@@ -30,7 +30,7 @@ export function PositionFit() {
           <p className="position-response-text">
             Over the past 3.5 years, I’ve operated in a high-growth SaaS
             environment (from 4M to 10M ARR) where I owned end-to-end growth and
-            revenue initiatives, which gave me exposure comparable to more
+            testing initiatives, which gave me exposure comparable to more
             traditional 5+ year roles. I know what working in a fast-paced
             environment is like and I particularly thrive in those. I also
             launched and grew a personal SaaS side-project for over 2 years,
@@ -62,7 +62,7 @@ export function PositionFit() {
           </p>
           <p className="position-response-text">
             Three years ago, I co-founded a SaaS project with friends and grew
-            it to 300€ MRR and 250+ weekly returning users. Beyond the numbers,
+            it to +400€ MRR and 250+ weekly returning users. Beyond the numbers,
             this experience taught me how to prioritize, iterate fast, and make
             pragmatic decisions under constraints — skills I use daily in my
             work.
@@ -118,7 +118,7 @@ export function PositionFit() {
           </p>
           <p className="position-response-text">
             Introducing a dedicated connection page before OAuth resulted in a
-            +3.4-point increase in conversion rate.
+            +3.4 point increase in conversion rate.
           </p>
           <p className="position-response-text">
             This is representative of how I work: diagnose issues, test

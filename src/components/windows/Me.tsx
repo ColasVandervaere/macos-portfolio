@@ -1,3 +1,6 @@
+import chessImg from "../../assets/chess.avif";
+import kitchenImg from "../../assets/kitchen-renovating.jpeg";
+import marathonImg from "../../assets/toulouse-half-marathon.jpeg";
 import "./Me.css";
 
 export function Me() {
@@ -18,7 +21,7 @@ export function Me() {
           <div className="me-card-image-container">
             <img
               className="me-card-image"
-              src="src/assets/toulouse-half-marathon.jpeg"
+              src={marathonImg}
               alt="Toulouse half marathon"
             />
           </div>
@@ -42,7 +45,7 @@ export function Me() {
           <div className="me-card-image-container">
             <img
               className="me-card-image"
-              src="src/assets/kitchen-renovating.jpeg"
+              src={kitchenImg}
               alt="Kitchen renovating"
             />
           </div>
@@ -62,7 +65,7 @@ export function Me() {
           <div className="me-card-image-container">
             <img
               className="me-card-image"
-              src="src/assets/chess-board.jpeg"
+              src={chessImg}
               alt="Chess Board"
             />
           </div>
