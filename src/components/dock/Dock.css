@@ -43,7 +43,7 @@
   place-items: center;
   position: relative;
   transition:
-    transform 120ms ease,
+    transform 130ms ease,
     background-color 120ms ease,
     border-color 120ms ease;
 }
