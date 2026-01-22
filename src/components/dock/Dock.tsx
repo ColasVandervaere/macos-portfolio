@@ -1,4 +1,4 @@
-import "./dock.css";
+import "./Dock.css";
 
 export type DockKey = string;
 
