@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import linkedinIcon from "./assets/linkedin_logo.png";
 import { Dock } from "./components/dock/Dock";
+import { MobilePage } from "./components/mobile/MobilePage";
 import { type ResizeDirection, Window } from "./components/window/Window";
 import { About } from "./components/windows/About";
 import { Contact } from "./components/windows/Contact";
 import { Me } from "./components/windows/Me";
 import { PositionFit } from "./components/windows/Position";
+import { useIsMobile } from "./helpers/isMobile";
 
 type WindowKey = "about" | "positionFit" | "me" | "contact" | "linkedin";
 
@@ -62,8 +64,8 @@ export default function App() {
       z: 0,
       x: 200,
       y: 160,
-      width: 480,
-      height: 360,
+      width: 780,
+      height: 460,
     },
     linkedin: {
       key: "linkedin",
@@ -213,8 +215,9 @@ export default function App() {
       .filter((w) => w.isOpen)
       .sort((a, b) => b.z - a.z)[0]?.z ?? null;
 
-  return (
-    <div className="desktop">
+  const isMobile = useIsMobile()
+  return isMobile ? <MobilePage /> : (
+     <div className="desktop">
       {windows.about.isOpen && (
         <Window
           title="About"

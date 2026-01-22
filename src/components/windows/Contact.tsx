@@ -4,7 +4,8 @@ export function Contact() {
   return (
     <div className="contact-container">
       <div className="contact-header">
-        <h1>Contact ✉️</h1>
+        <h1>Contact</h1>
+        <p>Let's get in touch!</p>
       </div>
 
       <div className="contact-card">

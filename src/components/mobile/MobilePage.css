@@ -1,0 +1,161 @@
+.mobile-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/colas-x-zefir.avif") no-repeat center / cover fixed;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.mobile-page__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.mobile-page__clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-page__time {
+    font-size: 80px;
+    font-weight: 200;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.mobile-page__date {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -10px;
+    opacity: 0.9;
+}
+
+.mobile-page__card {
+  background: rgba(30, 30, 30, 0.4);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 40px 30px;
+  max-width: 320px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobile-page__avatar-wrapper {
+    position: relative;
+}
+
+.mobile-page__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7d7d7d 0%, #3a3a3a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-page__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.mobile-page__message {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.mobile-page__submessage {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.mobile-page__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-page__dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dot--red { background: #ff5f57; }
+.dot--yellow { background: #febc2e; }
+.dot--green { background: #28c840; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-page__hint {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}

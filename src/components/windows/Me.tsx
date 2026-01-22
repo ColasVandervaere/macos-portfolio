@@ -11,7 +11,7 @@ export function Me() {
         <p className="me-intro">
           Working with someone isn't just about a skillset. It's also about
           personality, culture and vision fit. This part aims to show who I am
-          outside of work, so let's start with what I do most of my time:
+          outside of work, so let's talk about what I do in my free time:
         </p>
       </div>
 
@@ -72,10 +72,10 @@ export function Me() {
           <div className="me-card-content">
             <h3 className="me-card-title">Chess</h3>
             <p className="me-card-text">
-              Last year, I discovered a new passion for Chess and starting
-              playing from time to time on chess.com. 6 month later, I'm 800 elo
-              and definitely want to get better. Blaise Pascal said "Chess is
-              gymnasium for the mind" and I can't agree more. Road to 1500 elo
+              Last year, I discovered a new passion for Chess and started
+              playing from time to time on chess.com. As of right now, I'm only 800 elo
+              but I definitely want to get better. Blaise Pascal said "Chess is
+              the gymnasium for the mind" and I can't agree more. Road to 1500 elo
               by the end of 2026!
             </p>
           </div>
