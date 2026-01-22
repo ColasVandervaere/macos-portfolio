@@ -7,11 +7,11 @@ export function Me() {
   return (
     <div className="me-container">
       <div className="me-header">
-        <h1>Me</h1>
+        <h1>Who am I?</h1>
         <p className="me-intro">
           Working with someone isn't just about a skillset. It's also about
           personality, culture and vision fit. This part aims to show who I am
-          outside of work, so let's talk about what I do in my free time:
+          outside of work, so let's talk about what I do in my free time
         </p>
       </div>
 
@@ -28,14 +28,14 @@ export function Me() {
           <div className="me-card-content">
             <h3 className="me-card-title">Sports</h3>
             <p className="me-card-text">
-              I'm a huge sports fan. I find it the best way to develop yourself,
-              both physically and mentally. I've been practicing sport for as
-              long as I can remember. First mountain biking (I grew up in a
-              village in the Alps), then volley-ball during middle school (went
+              I spend a lot of time on sports. I find it the best way to develop yourself,
+              both physically and mentally. I've been playing sports for as
+              long as I can remember. First, mountain biking (I grew up in a
+              village in the Alps), then volleyball during middle school (went
               to 4th round of France championship with my team). I now mainly
               hit the gym, run and try to step up my fitness game with
-              competitions such as Hyrox. I'm also preparing a marathon for the
-              end of 2026.
+              competitions such as Hyrox. I'm also preparing for the Nice-Cannes marathon at the end of
+              2026.
             </p>
           </div>
         </div>
@@ -52,10 +52,11 @@ export function Me() {
           <div className="me-card-content">
             <h3 className="me-card-title">Renovating apartments</h3>
             <p className="me-card-text">
-              Zefir's mission resonate with me because I strongly believe in the
-              real estate market. Earlier this year, I bought a flat with some
-              friends in Montpellier's citycenter and we completely renovated it
-              for 6 month. We loved it and want to do it again in 2026.
+              Zefir's mission resonates with me because I strongly believe that people 
+              will always be interested in investing in real estate. 
+              And i'm no exception. Earlier this year, I bought a flat with some
+              friends in Montpellier's city center and we completely renovated it
+              for 6 months. We loved it and want to do it again in 2026.
             </p>
           </div>
         </div>
@@ -75,7 +76,7 @@ export function Me() {
               Last year, I discovered a new passion for Chess and started
               playing from time to time on chess.com. As of right now, I'm only 800 elo
               but I definitely want to get better. Blaise Pascal said "Chess is
-              the gymnasium for the mind" and I can't agree more. Road to 1500 elo
+              the gymnasium of the mind" and I can't agree more. Road to 1500 elo
               by the end of 2026!
             </p>
           </div>

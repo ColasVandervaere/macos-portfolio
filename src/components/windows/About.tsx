@@ -29,16 +29,16 @@ export function About() {
             <strong>- Hey</strong> (you're here)
           </li>
           <li className="about-list-item">
-            <strong>- Why me?</strong> (how my experience matches the role,
+            <strong>- Position fit</strong> (how my experience matches the role,
             point by point)
           </li>
           <li className="about-list-item">
-            <strong>- LinkedIn</strong> (just a link to my LinkedIn profile,
-            which stands as my resume. You'll find all the informations about my
-            experiences and degrees.)
+            <strong>- LinkedIn</strong> (a link to my LinkedIn profile,
+            which stands as my resume. You'll find all the information about my
+            experience and education)
           </li>
           <li className="about-list-item">
-            <strong>- Who am I?</strong> (What do I do outside of work?)
+            <strong>- Who am I?</strong> (What I do outside of work)
           </li>
           <li className="about-list-item">
             <strong>- Contact</strong>
