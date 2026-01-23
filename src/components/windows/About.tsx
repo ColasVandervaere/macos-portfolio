@@ -26,7 +26,7 @@ export function About() {
         </span>
         <ul className="about-list">
           <li className="about-list-item">
-            <strong>- Hey</strong> (you're here)
+            <strong>- About</strong> (you're here)
           </li>
           <li className="about-list-item">
             <strong>- Position fit</strong> (how my experience matches the role,
