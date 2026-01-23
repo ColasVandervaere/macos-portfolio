@@ -33,15 +33,15 @@ export function About() {
             point by point)
           </li>
           <li className="about-list-item">
+            <strong>- Who am I?</strong> (what I do outside of work)
+          </li>
+          <li className="about-list-item">
+            <strong>- Contact</strong>(my phone number & email address)
+          </li>
+          <li className="about-list-item">
             <strong>- LinkedIn</strong> (a link to my LinkedIn profile,
             which stands as my resume. You'll find all the information about my
             experience and education)
-          </li>
-          <li className="about-list-item">
-            <strong>- Who am I?</strong> (What I do outside of work)
-          </li>
-          <li className="about-list-item">
-            <strong>- Contact</strong>
           </li>
         </ul>
       </div>
