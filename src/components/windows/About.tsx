@@ -6,15 +6,15 @@ export function About() {
       <div className="about-header">
         <h1>Hey!</h1>
         <p className="about-intro">
-          I’m Colas — Growth Marketer & Full Stack Developer. This React app
-          works like a mini macOS desktop app. I built this as an application
+          I’m Colas, a 25 year old growth marketer from Montpellier :) <br />
+          This React app works like a lightweight macOs. I built it as an application
           for the{" "}
           <a
             className="about-link"
-            href="https://jobs.ashbyhq.com/zefir/6fbf6297-ab96-4c46-8e1a-a15258a8fa58"
+            href="https://finary.com/en/careers?ashby_jid=2eb237ca-7658-4596-9449-5cfb0cf14998#careers-ashby-section"
             target="_blank"
           >
-            Growth Ops position
+            Growth Marketing Manager position
           </a>
           .
         </p>
@@ -22,7 +22,7 @@ export function About() {
 
       <div className="about-guide">
         <span className="about-guide-title">
-          As a little Guide, here's how it's structured:
+          As a little Guide, here's how the app is structured:
         </span>
         <ul className="about-list">
           <li className="about-list-item">

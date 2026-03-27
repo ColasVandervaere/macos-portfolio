@@ -52,11 +52,12 @@ export function Me() {
           <div className="me-card-content">
             <h3 className="me-card-title">Renovating apartments</h3>
             <p className="me-card-text">
-              Zefir's mission resonates with me because I strongly believe that people 
-              will always be interested in investing in real estate. 
-              And i'm no exception. Earlier this year, I bought a flat with some
-              friends in Montpellier's city center and we completely renovated it
-              for 6 months. We loved it and want to do it again in 2026.
+              I bought a flat with some friends in Montpellier's city center
+              earlier this year and we spent 6 months renovating it from scratch.
+              It was a lot of work but we loved every bit of it and we're already
+              planning to do it again in 2026. It also got me properly into
+              investing and thinking about where to put money, which is how I
+              ended up using Finary a lot.
             </p>
           </div>
         </div>
@@ -74,10 +75,10 @@ export function Me() {
             <h3 className="me-card-title">Chess</h3>
             <p className="me-card-text">
               Last year, I discovered a new passion for Chess and started
-              playing from time to time on chess.com. As of right now, I'm only 800 elo
+              playing from time to time on chess.com. As of right now, I only reached 1000 elo on chess.com
               but I definitely want to get better. Blaise Pascal said "Chess is
-              the gymnasium of the mind" and I can't agree more. Road to 1500 elo
-              by the end of 2026!
+              the gymnasium of the mind." I think it's a nice way to put it. Road to 1500 elo
+              in 2026!
             </p>
           </div>
         </div>

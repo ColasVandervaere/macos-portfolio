@@ -38,7 +38,7 @@ export default function App() {
       x: 280,
       y: 150,
       width: 920,
-      height: 630,
+      height: 670,
     },
     positionFit: {
       key: "positionFit",

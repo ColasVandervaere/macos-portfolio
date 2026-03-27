@@ -4,13 +4,6 @@
   gap: 24px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 48px;
-}
-
-@media (max-width: 600px) {
-  .me-container {
-    padding: 24px;
-  }
 }
 
 .me-header {

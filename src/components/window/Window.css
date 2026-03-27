@@ -6,6 +6,18 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   overflow: hidden;
+  animation: windowAppear 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes windowAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .window--focused {
@@ -36,6 +48,9 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   cursor: pointer;
   padding: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .dot--red {
@@ -53,6 +68,29 @@
 .dot--grey {
   background: #4a4a4a;
   cursor: default;
+}
+
+.dot--red::after,
+.dot--yellow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.dot--red::after { content: "×"; }
+.dot--yellow::after { content: "−"; }
+
+.window__titlebar:hover .dot--red::after,
+.window__titlebar:hover .dot--yellow::after {
+  opacity: 1;
 }
 
 .window__title {
