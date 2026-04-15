@@ -108,8 +108,8 @@ function Desktop() {
   const [windows, setWindows] = useState<Record<WindowKey, WindowState>>({
     about: {
       key: "about",
-      isOpen: false,
-      z: 0,
+      isOpen: true,
+      z: 10,
       x: 280,
       y: 150,
       width: 920,
