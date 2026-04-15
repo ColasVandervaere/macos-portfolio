@@ -1,6 +1,9 @@
+import { useProfile } from "../../profile/useProfile";
 import "./Contact.css";
 
 export function Contact() {
+  const { contact } = useProfile();
+
   return (
     <div className="contact-container">
       <div className="contact-header">
@@ -9,21 +12,21 @@ export function Contact() {
       </div>
 
       <div className="contact-card">
-        <a href="mailto:colas.vdv@gmail.com" className="contact-item">
+        <a href={`mailto:${contact.email}`} className="contact-item">
           <div className="contact-icon">✉️</div>
           <div className="contact-item-body">
             <span className="contact-label">Email</span>
-            <span className="contact-value">colas.vdv@gmail.com</span>
+            <span className="contact-value">{contact.email}</span>
           </div>
         </a>
 
         <div className="contact-divider" />
 
-        <a href="tel:0782842009" className="contact-item">
+        <a href={contact.phoneHref} className="contact-item">
           <div className="contact-icon">📱</div>
           <div className="contact-item-body">
             <span className="contact-label">Phone</span>
-            <span className="contact-value phone">07 82 84 20 09</span>
+            <span className="contact-value phone">{contact.phoneDisplay}</span>
           </div>
         </a>
       </div>

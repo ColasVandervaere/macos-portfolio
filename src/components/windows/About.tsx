@@ -1,22 +1,25 @@
+import { useProfile } from "../../profile/useProfile";
 import "./About.css";
 
 export function About() {
+  const { about } = useProfile();
+
   return (
     <div className="about-container">
       <div className="about-header">
         <h1>Hey!</h1>
         <p className="about-intro">
-          I’m Colas, a 25 year old growth marketer from Montpellier :) <br />
-          This React app works like a lightweight macOs. I built it as an application
-          for the{" "}
+          {about.introLine} <br />
+          {about.beforeLink}
           <a
             className="about-link"
-            href="https://finary.com/en/careers?ashby_jid=2eb237ca-7658-4596-9449-5cfb0cf14998#careers-ashby-section"
+            href={about.jobLink.href}
             target="_blank"
+            rel="noreferrer"
           >
-            Growth Marketing Manager position
+            {about.jobLink.label}
           </a>
-          .
+          {about.afterLink}
         </p>
       </div>
 

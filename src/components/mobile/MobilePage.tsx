@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { resolveDesktopBackgroundUrl } from "../../profile/desktopBackground";
+import { useProfile } from "../../profile/useProfile";
 import "./MobilePage.css";
 
 export const MobilePage = () => {
+    const profile = useProfile();
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -18,7 +21,12 @@ export const MobilePage = () => {
     };
 
     return (
-        <div className="mobile-page">
+        <div
+            className="mobile-page"
+            style={{
+                backgroundImage: `url(${resolveDesktopBackgroundUrl(profile)})`,
+            }}
+        >
             <div className="mobile-page__content">
                 <div className="mobile-page__clock">
                     <h2 className="mobile-page__time">{formatTime(time)}</h2>

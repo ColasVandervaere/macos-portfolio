@@ -57,7 +57,7 @@ export function Me() {
               It was a lot of work but we loved every bit of it and we're already
               planning to do it again in 2026. It also got me properly into
               investing and thinking about where to put money, which is how I
-              ended up using Finary a lot.
+              ended up getting properly into investing.
             </p>
           </div>
         </div>
@@ -74,8 +74,8 @@ export function Me() {
           <div className="me-card-content">
             <h3 className="me-card-title">Chess</h3>
             <p className="me-card-text">
-              Last year, I discovered a new passion for Chess and started
-              playing from time to time on chess.com. As of right now, I only reached 1000 elo on chess.com
+              Last year, I decided to learn Chess and started
+              playing from time to time on chess.com. As of right now, I only reached 1000 elo
               but I definitely want to get better. Blaise Pascal said "Chess is
               the gymnasium of the mind." I think it's a nice way to put it. Road to 1500 elo
               in 2026!

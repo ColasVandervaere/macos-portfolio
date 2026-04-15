@@ -1,14 +1,24 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import linkedinIcon from "./assets/linkedin_logo.png";
 import { Dock } from "./components/dock/Dock";
 import { MobilePage } from "./components/mobile/MobilePage";
+import { RootPage } from "./components/root/RootPage";
 import { type ResizeDirection, Window } from "./components/window/Window";
 import { About } from "./components/windows/About";
 import { Contact } from "./components/windows/Contact";
 import { Me } from "./components/windows/Me";
 import { PositionFit } from "./components/windows/Position";
 import { useIsMobile } from "./helpers/isMobile";
+import { ProfileProvider } from "./profile/ProfileContext";
+import type { Profile } from "./profile/types";
+import { useProfile } from "./profile/useProfile";
+import { loadProfile } from "./profile/loadProfile";
+import {
+  macOsWallpaper,
+  resolveDesktopBackgroundUrl,
+} from "./profile/desktopBackground";
 
 type WindowKey = "about" | "positionFit" | "me" | "contact" | "linkedin";
 
@@ -22,7 +32,72 @@ type WindowState = {
   height: number;
 };
 
-export default function App() {
+function ProfileRoute() {
+  const { profileId } = useParams();
+  return <ProfileGate key={profileId ?? "default"} />;
+}
+
+function ProfileGate() {
+  const { profileId } = useParams();
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadProfile(profileId)
+      .then((p) => {
+        if (!cancelled) {
+          setProfile(p);
+          setError(null);
+        }
+      })
+      .catch((e: unknown) => {
+        if (!cancelled) {
+          setProfile(null);
+          setError(e instanceof Error ? e.message : "Failed to load profile");
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [profileId]);
+
+  if (error) {
+    return (
+      <div
+        className="desktop desktop--message"
+        style={{ backgroundImage: `url(${macOsWallpaper})` }}
+      >
+        <p>{error}</p>
+        <p>
+          <Link to="/">Open default profile</Link>
+        </p>
+      </div>
+    );
+  }
+
+  if (!profile) {
+    return (
+      <div
+        className="desktop desktop--message"
+        style={{ backgroundImage: `url(${macOsWallpaper})` }}
+      >
+        Loading…
+      </div>
+    );
+  }
+
+  return (
+    <ProfileProvider profile={profile}>
+      <Desktop />
+    </ProfileProvider>
+  );
+}
+
+function Desktop() {
+  const profile = useProfile();
+  const { linkedinUrl } = profile;
+  const desktopBg = resolveDesktopBackgroundUrl(profile);
   const zCounter = useRef(10);
   const draggingKey = useRef<WindowKey | null>(null);
   const dragOffset = useRef({ x: 0, y: 0 });
@@ -33,7 +108,7 @@ export default function App() {
   const [windows, setWindows] = useState<Record<WindowKey, WindowState>>({
     about: {
       key: "about",
-      isOpen: true,
+      isOpen: false,
       z: 0,
       x: 280,
       y: 150,
@@ -77,16 +152,6 @@ export default function App() {
       height: 360,
     },
   });
-
-  useEffect(() => {
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onMouseUp);
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onMouseUp);
-    };
-  }, []);
 
   const openWindow = (key: WindowKey) => {
     zCounter.current += 1;
@@ -210,6 +275,16 @@ export default function App() {
     resizeDirection.current = null;
   };
 
+  useEffect(() => {
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+  }, []);
+
   const focusedZ =
     Object.values(windows)
       .filter((w) => w.isOpen)
@@ -217,7 +292,10 @@ export default function App() {
 
   const isMobile = useIsMobile()
   return isMobile ? <MobilePage /> : (
-     <div className="desktop">
+     <div
+       className="desktop"
+       style={{ backgroundImage: `url(${desktopBg})` }}
+     >
       {windows.about.isOpen && (
         <Window
           title="About"
@@ -308,7 +386,7 @@ export default function App() {
             key: "linkedin",
             label: "LinkedIn",
             icon: linkedinIcon,
-            url: "https://linkedin.com/in/colas-vandervaere",
+            url: linkedinUrl,
           },
         ]}
         isOpen={(k) => windows[k].isOpen}
@@ -316,5 +394,67 @@ export default function App() {
         onActivate={openWindow}
       />
     </div>
+  );
+}
+
+function RootGate() {
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadProfile(undefined)
+      .then((p) => {
+        if (!cancelled) {
+          setProfile(p);
+          setError(null);
+        }
+      })
+      .catch((e: unknown) => {
+        if (!cancelled) {
+          setProfile(null);
+          setError(e instanceof Error ? e.message : "Failed to load profile");
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (error) {
+    return (
+      <div
+        className="desktop desktop--message"
+        style={{ backgroundImage: `url(${macOsWallpaper})` }}
+      >
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  if (!profile) {
+    return (
+      <div
+        className="desktop desktop--message"
+        style={{ backgroundImage: `url(${macOsWallpaper})` }}
+      >
+        Loading…
+      </div>
+    );
+  }
+
+  return (
+    <ProfileProvider profile={profile}>
+      <RootPage />
+    </ProfileProvider>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<RootGate />} />
+      <Route path="/:profileId" element={<ProfileRoute />} />
+    </Routes>
   );
 }

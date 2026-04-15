@@ -1,0 +1,86 @@
+{
+  "id": "default",
+  "label": "Finary (example)",
+  "desktopBackgroundUrl": "/profiles/default/finary-desktop.avif",
+  "linkedinUrl": "https://linkedin.com/in/colas-vandervaere",
+  "about": {
+    "introLine": "I'm Colas, a 25 year old growth marketer from Montpellier :)",
+    "beforeLink": "This React app works like a lightweight macOS. I built it as an application for the ",
+    "jobLink": {
+      "href": "https://finary.com/en/careers?ashby_jid=2eb237ca-7658-4596-9449-5cfb0cf14998#careers-ashby-section",
+      "label": "Growth Marketing Manager position"
+    },
+    "afterLink": "."
+  },
+  "contact": {
+    "email": "colas.vdv@gmail.com",
+    "phoneDisplay": "07 82 84 20 09",
+    "phoneHref": "tel:0782842009"
+  },
+  "position": {
+    "intro": "Alright, let's deep dive into what really matters. If we take a look at the job offer, here's what you are looking for:",
+    "sections": [
+      {
+        "reqTitle": "Track record",
+        "requirements": [
+          "2-10 years of experience in growth or marketing roles in startups or high-growth scale-ups."
+        ],
+        "responses": [
+          "I've spent the last 3.5 years as a Growth Marketer at Waalaxy, a B2B SaaS that went from 4M to 10M ARR while I was there. It's the kind of place where you either learn to swim fast or you drown, and I genuinely loved that about the role.",
+          "Outside of work, I also co-founded a SaaS side project with some friends and grew it to 250+ weekly returning users. It's not a huge number, but building something from scratch with no budget taught me a lot more than any course could."
+        ]
+      },
+      {
+        "reqTitle": "Systems & growth loops",
+        "requirements": ["Think in systems and frameworks, especially growth loops."],
+        "responses": [
+          "I'm not great at one-off campaigns. What I actually enjoy is figuring out the underlying loop: where do users come from, what gets them to engage, what makes them come back and tell others. At Waalaxy, I spent a lot of time mapping that out and finding where the system was leaking.",
+          "With Finary specifically, the loop feels exciting to me. Users track their portfolio, they discover things they're missing, they improve their allocation, their performance goes up, they share the tool. That's an interesting funnel to work on."
+        ]
+      },
+      {
+        "reqTitle": "Full project ownership",
+        "requirements": [
+          "Own projects from start to finish with minimal oversight.",
+          "Thrive in ambiguity and fast-paced environments where priorities shift quickly."
+        ],
+        "responses": [
+          "This is honestly how I prefer to work. At Waalaxy, I'd typically spot a problem, dig into the data, propose something, run it, and write up what we learned. I don't need a lot of hand-holding and I find it frustrating when there is too many processes around simple decisions.",
+          "Running a side project with friends reinforced that. When there's no one to delegate to, you get good at figuring out what actually matters and just doing it."
+        ]
+      },
+      {
+        "reqTitle": "Data-driven experimentation",
+        "requirements": [
+          "Operate with a data-driven mindset and make decisions grounded in clear success metrics.",
+          "Have experience running structured experimentation across the growth funnel."
+        ],
+        "responses": [
+          "I built Waalaxy's full website tracking plan from scratch using PostHog and ran A/B tests across the funnel regularly. One I'm proud of: I noticed our signup conversion was lower than it should have been. I had a hunch the LinkedIn OAuth step wasn't properly optimized, so I tested adding a dedicated connection page before it. That one change was worth +3.4 conversion points.",
+          "I always write up what I tested, what the hypothesis was, and what we learned, even (if not especially) when the test is unsuccessful. That's how you get better over time."
+        ]
+      },
+      {
+        "reqTitle": "AI in day-to-day work",
+        "requirements": ["Are an AI promoter and use it to amplify execution."],
+        "responses": [
+          "I use AI constantly, for writing, for research, for building things faster (I did for this application, for example). It's just part of how I work at this point. I'm also a self-taught full-stack developer (React, Node.js, TypeScript), so when I need something that doesn't exist yet and that can't be done with no-code tools, I can build it.",
+          "This portfolio is a good example. It's a React app that works like a mini macOS, and I built and deployed it specifically to apply for this role. It felt like a more interesting way to introduce myself than sending a PDF."
+        ]
+      },
+      {
+        "reqTitle": "Bonus ✦",
+        "requirements": [
+          "Have experience in fintech or are an active investor yourself.",
+          "Have previously worked at product-led B2C companies."
+        ],
+        "responses": [
+          "Earlier this year I bought a flat in Montpellier with some friends as a real estate investment and we spent 6 months renovating it. I also personally invest in stocks and ETFs (got a 22% return on my investments in 2025, thank you Google and Nvidia). All this to say I know a bit when it comes to investing.",
+          "And on the product-led side: Waalaxy is a 100% product-led company, and I find it being the most interesting model to work on as a growth manager."
+        ],
+        "isBonus": true
+      }
+    ],
+    "closing": "The two things I'd be most excited to work on at Finary: working on B2C funnels (as I mainly worked on B2B funnels so far) and handling the go-to-market for the Brokerage Account. Happy to get into the details on both!"
+  }
+}

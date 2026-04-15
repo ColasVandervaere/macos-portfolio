@@ -1,0 +1,96 @@
+{
+  "id": "joko",
+  "label": "Joko",
+  "desktopBackgroundUrl": "/src/assets/Joko-x-Colas.png",
+  "linkedinUrl": "https://linkedin.com/in/colas-vandervaere",
+  "about": {
+    "introLine": "I'm Colas, a growth marketer based in Montpellier with 3.5 years of experience owning conversion funnels, running experiments, and sitting in the data until something interesting shows up.",
+    "beforeLink": "This app works like a lightweight macOS. I built it as an application for the ",
+    "jobLink": {
+      "href": "https://www.welcometothejungle.com/fr/companies/joko/jobs/product-manager_paris_JOKO_jqDYJO6",
+      "label": "Growth Product Manager position"
+    },
+    "afterLink": " at Joko."
+  },
+  "contact": {
+    "email": "colas.vdv@gmail.com",
+    "phoneDisplay": "07 82 84 20 09",
+    "phoneHref": "tel:0782842009"
+  },
+  "position": {
+    "intro": "Alright, let's deep dive into what really matters. If we take a look at the job offer, here's what you are looking for:",
+    "sections": [
+      {
+        "reqTitle": "Track record",
+        "requirements": [
+          "Solid experience as a Product Manager or Growth Manager in a B2C product with a large user base.",
+          "Have owned and shipped improvements across a growth or conversion funnel.",
+          "Run A/B tests at scale (with +10K users)."
+        ],
+        "responses": [
+          "I've spent the last 3.5 years as a Growth Marketer at Waalaxy, a SaaS that I helped grow from 4M to 10M ARR while I was there. My work lived at the intersection of marketing and product: owning conversion funnels end to end, running experiments on the website, and digging into the data to figure out where things were leaking.",
+          "Waalaxy is B2B, not B2C. I know. The scale and the user psychology are different. But the funnel is still an AARRR funnel, users still drop off at predictable points, and your job is still to figure out which drop-off is worth fixing first. What excites me about Joko is actually exactly that B2C scale. 5M users means faster experiment cycles, cleaner statistical signals, and a much higher ceiling for what a 2% lift actually translates to in real numbers."
+        ]
+      },
+      {
+        "reqTitle": "Data & experimentation",
+        "requirements": [
+          "Deeply data-driven.",
+          "Comfortable analyzing experiment results, diving into conversion data, and working daily with a Data Analyst.",
+          "SQL or strong analytics tool proficiency is a plus."
+        ],
+        "responses": [
+          "I built Waalaxy's full website tracking plan from scratch using PostHog and ran A/B tests across the funnel regularly. One I'm proud of: I noticed our signup conversion was lower than it should have been. I had a hunch the LinkedIn OAuth step wasn't properly optimized, so I tested adding a dedicated connection page before it. I ran this test on 34,000 visitors over 4 weeks. That one change was worth +3.4 conversion points.",
+          "I'm comfortable writing the queries I need day to day, and I know how to work well with a data analyst. Even though I mainly use product analytics tools to get the data I need, I can write still write SQL queries if I need to."
+        ]
+      },
+      {
+        "reqTitle": "Shipping fast & iterating",
+        "requirements": [
+          "At ease with continuous improvement.",
+          "You don't need to build 0-to-1 to feel fulfilled.",
+          "Finding the best next experiment, shipping it fast, and learning from results."
+        ],
+        "responses": [
+          "This is honestly how I'm wired. At Waalaxy, the loop was: spot a friction point in the funnel, dig into the data, draft a hypothesis, get it live, write up the results. I don't need to reinvent everything to feel like I'm doing meaningful work. Finding a 3% conversion lift in onboarding step 2 and knowing it moves the needle for hundreds of thousands of users is interesting enough.",
+          "Being a self-taught developer (React, TypeScript, Node.js) also changes your relationship with iteration. I can prototype a lot of things myself, which means fewer handoffs and faster test cycles. It also help me understand the product better, which help me take better decisions."
+        ]
+      },
+      {
+        "reqTitle": "Cross-functional alignment",
+        "requirements": [
+          "Excelling at aligning Marketing, CRM, Business Lines, and Data teams around shared metrics and priorities.",
+          "Strong cross-functional leadership: this role sits at the center of the organization."
+        ],
+        "responses": [
+          "At Waalaxy, my role sat between marketing and product, which meant I was constantly working with teams that had different priorities. The thing I learned is you don't get people on board by explaining your project. You get them on board by making the shared metric obvious and making it easy for them to contribute without blocking their own roadmap.",
+          "I also co-founded a SaaS called Caapse with 2 software engineer friends. When you're 3 people with different backgrounds trying to make product decisions without a clear hierarchy, you get very good at communicating context fast and moving without waiting for consensus. We grew it to 250+ weekly returning users before deciding to shut it down. Happy to get into the details."
+        ]
+      },
+      {
+        "reqTitle": "AI in day-to-day work",
+        "requirements": [
+          "Constantly challenge yourself to stay ahead on AI tools, automation, and new ways of working.",
+          "Actively bring these into your practice."
+        ],
+        "responses": [
+          "AI is just part of how I work at this point. I use it for writing, research, building faster, and automating the repetitive stuff that used to eat up a chunk of my week. I'd say it makes 30-40% of my work noticeably faster, and I'm always looking for new places to apply it.",
+          "One thing i use AI for in my job is to write up and structure the results of A/B tests. It's a lot faster than writing it up manually, and it helps making the results more readable."
+        ]
+      },
+      {
+        "reqTitle": "Bonus ✦",
+        "requirements": [
+          "Experience across multiple product surfaces (mobile, web app, browser extension).",
+          "Topics ranging from onboarding to referral to churn to revenue."
+        ],
+        "responses": [
+          "Waalaxy's product is a Chrome extension at its core, with a web app dashboard. A big part of growth work there was understanding how users moved between those surfaces, and where they got confused or dropped off when the experience wasn't consistent.",
+          "The things I'd most want to dig into at Joko are onboarding (there's almost always something interesting hiding in the first-session drop-off) and the referral program. It looks simple from the outside but the execution has a lot of subtlety to it."
+        ],
+        "isBonus": true
+      }
+    ],
+    "closing": "Honestly, this role feels like a natural next step for where I'm at. 3.5 years at Waalaxy gave me a solid base in growth: tracking plans, A/B testing, conversion funnel work, data analysis. And with Caapse, I got to experience the product side, making prioritization calls, deciding what to build and what to kill, and owning the roadmap and specs for the engineering team. The Growth PM role at Joko is exactly the kind of position that puts both together."
+  }
+}

@@ -5,7 +5,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url("../../assets/finary-x-colas.avif") no-repeat center / cover fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   padding: 20px;
